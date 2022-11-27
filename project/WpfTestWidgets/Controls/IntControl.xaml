@@ -22,9 +22,9 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button x:Name="btnMinus" Content="➖" HorizontalAlignment="Left" Margin="2,12,0,0" VerticalAlignment="Top" Width="17" Click="btnMinus_Click"/>
+        <Button x:Name="btnMinus" Content="➖" HorizontalAlignment="Left" Margin="2,12,0,0" VerticalAlignment="Top" Width="19" Click="btnMinus_Click"/>
         <Button x:Name="btnPllus" Content="➕" HorizontalAlignment="Left" Margin="149,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.371,-0.292" Click="btnPlus_Click"/>
-        <Button x:Name="btnCalc" Content="⌨" HorizontalAlignment="Left" Margin="218,12,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCalc" Content="⌨" HorizontalAlignment="Left" Margin="218,12,0,0" VerticalAlignment="Top" Click="btnCalc_Click"/>
         <Button x:Name="btnSetDefault" Content="↩"  IsEnabled="{Binding IsEnable}" HorizontalAlignment="Left" Margin="184,12,0,0" VerticalAlignment="Top" Width="26" Click="btnSetDefault_Click"/>
     </Grid>
 </UserControl>

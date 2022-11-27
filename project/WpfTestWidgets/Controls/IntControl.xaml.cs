@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -18,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
+using WpfTestWidgets.Utils;
 
 namespace WpfTestWidgets
 {
@@ -175,6 +177,28 @@ namespace WpfTestWidgets
 		private void btnSetDefault_Click(object sender, RoutedEventArgs e)
 		{
 			Value = DefaultValue;
+		}
+
+		private void btnCalc_Click(object sender, RoutedEventArgs e)
+		{
+			var btn = (Button)sender;
+			var underButton = DpiHelper.UpdateScreenPositionWidthCurrentDPI(this.PointToScreen(btn.TranslatePoint(new Point(0, btn.ActualHeight), this)), this);
+			Window window = new Window
+			{
+				Title = "",
+				WindowStyle=WindowStyle.None,
+				ResizeMode =ResizeMode.NoResize,
+				SizeToContent=SizeToContent.WidthAndHeight,
+				Top = underButton.Y,
+				Left = underButton.X,
+				WindowStartupLocation =WindowStartupLocation.Manual,
+				Content = new NumPadControl()
+			};
+			
+			window.Deactivated += (object? sender, EventArgs e) => { (sender as Window)?.Close(); };
+
+			window.Show();
+			
 		}
 	}
 

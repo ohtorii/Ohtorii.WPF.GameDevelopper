@@ -10,5 +10,6 @@
         <local:IntControl x:Name="intHp" Value="{Binding HitPoint}" HorizontalAlignment="Left" Margin="69,61,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="51,204,0,0" TextWrapping="Wrap" Text="{Binding HitPoint}" VerticalAlignment="Top" Width="146"/>
         <Button x:Name="button" Content="Dec" HorizontalAlignment="Left" Margin="111,143,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        <local:NumPadControl HorizontalAlignment="Left" Margin="488,159,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
